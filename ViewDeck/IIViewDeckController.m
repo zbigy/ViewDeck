@@ -87,6 +87,7 @@ __typeof__(h) __h = (h);                                    \
 #import <QuartzCore/QuartzCore.h>
 #import <objc/message.h>
 #import "IIWrapController.h"
+#import "PPRangeSlider.h"
 
 
 enum {
@@ -2316,7 +2317,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
         if (!result) return result;
     }
 
-    if ([[touch view] isKindOfClass:[UISlider class]])
+    if ([[touch view] isKindOfClass:[UISlider class]] || [[touch view] isKindOfClass:[PPRangeSlider class]])
         return NO;
 
     _panOrigin = self.slidingControllerView.frame.origin;
